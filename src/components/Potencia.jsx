@@ -10,14 +10,14 @@ export default function Potencia() {
     localStorage.setItem('PotenciaAmperios', JSON.stringify(pAmperios))
   },[pVoltios, pAmperios])
   return (
-    <div className="mt-4">
-      <h1 className="mx-auto w-max text-3xl text-blue-700 font-bold uppercase">Potencia</h1>
+    <div className="mt-4 shadow rounded-xl">
+      <h1 className="mx-auto w-max text-3xl text-blue-700 font-bold uppercase max-md:text-lg">Potencia</h1>
       <h1 
-        className="mx-auto w-max text-3xl text-gray-700 font-bold uppercase"
+        className="mx-auto text-3xl text-gray-700 font-bold uppercase max-md:text-ms max-md:text-lg whitespace-normal text-center"
       >
-        Ingresa los valores de Volios y Amperios (V * A)
+        Ingrese Voltios y Amperios (V * A)
       </h1>
-      <form className="mx-auto w-3/4 bg-white rounded-lg shadow-lg p-5">
+      <form className="mx-auto w-3/4 bg-white rounded-lg shadow-lg p-5 max-md:w-full">
         <div className="flex flex-col mb-2">
           <label className="text-md text-gray-800" htmlFor="voltios">Voltios</label>
           <input 
@@ -48,7 +48,7 @@ export default function Potencia() {
       </div>
       <div className="w-full mt-2">
         <p className="w-3/4 mx-auto px-2 py-1 rounded-lg">
-          <span className="font-bold text-gray-600">Recistencia: R</span> = {pAmperios/pVoltios}
+          <span className="font-bold text-gray-600">Recistencia: R</span> = {pAmperios != 0 && pVoltios !=0 ? pAmperios/pVoltios : "0"}
         </p>
       </div>
     </div>

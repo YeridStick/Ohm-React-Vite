@@ -11,14 +11,14 @@ export default function Tencion() {
   console.log(tAmperios)
   console.log(tVatios)
   return (
-    <div className="mt-4">
-      <h1 className="mx-auto w-max text-3xl text-blue-700 font-bold uppercase">Tencion</h1>
+    <div className="mt-4 shadow rounded-xl">
+      <h1 className="mx-auto w-max text-3xl text-blue-700 font-bold uppercase max-md:text-lg">Tencion</h1>
       <h1 
-        className="mx-auto w-max text-3xl text-gray-700 font-bold uppercase"
+        className="mx-auto text-3xl text-gray-700 font-bold uppercase max-md:text-ms max-md:text-lg whitespace-normal text-center"
       >
-        Ingresa los valores de Amperios y Vatios (A / W)
+        Ingresa Amperios y Vatios (A / W)
       </h1>
-      <form className="mx-auto w-3/4 bg-white rounded-lg shadow-lg p-5">
+      <form className="mx-auto w-3/4 bg-white rounded-lg shadow-lg p-5 max-md:w-full">
         <div className="flex flex-col mb-2">
           <label className="text-md text-gray-800" htmlFor="Vatios">Amperios</label>
           <input 
@@ -51,7 +51,7 @@ export default function Tencion() {
       </div>
       <div className="w-full mt-2">
         <p className="w-3/4 mx-auto px-2 py-1 rounded-lg">
-          <span className="font-bold text-gray-600">Recistencia: R</span> = {(tVatios/tAmperios)/tAmperios}
+          <span className="font-bold text-gray-600">Recistencia: R</span> = {tAmperios!=0 && (tVatios/tAmperios) !=0 ? (tVatios/tAmperios)/tAmperios : "0"}
         </p>
       </div>
     </div>
